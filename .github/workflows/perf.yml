@@ -19,7 +19,7 @@ jobs:
 
       - name: Run benchmark
         run: |
-          perftrack run "python perf_scripts/bench_sum.py"
+          perftrack run "python demo-perf-app/perf_scripts/bench_sum.py"
 
       - name: Set baseline if not exists
         run: |
