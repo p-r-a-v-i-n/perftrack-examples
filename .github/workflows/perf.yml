@@ -23,7 +23,7 @@ jobs:
 
       - name: Set baseline if not exists
         run: |
-          if [ ! -f .perftrack/baseline.json ]; then
+          if [ ! -f demo-perf-app/.perftrack/baseline.json ]; then
             echo "No baseline found — creating baseline"
             perftrack baseline set-latest || true
           fi
