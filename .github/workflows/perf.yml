@@ -18,10 +18,12 @@ jobs:
           pip install git+https://github.com/p-r-a-v-i-n/perftrack.git
 
       - name: Run benchmark
+        working-directory: demo-perf-app
         run: |
           perftrack run "python perf_scripts/bench_sum.py"
 
       - name: Set baseline if not exists
+        working-directory: demo-perf-app
         run: |
           if [ ! -f .perftrack/baseline.json ]; then
             echo "No baseline found — creating baseline"
@@ -29,5 +31,6 @@ jobs:
           fi
 
       - name: Compare vs baseline
+        working-directory: demo-perf-app
         run: |
           perftrack compare --fail-on-regression
