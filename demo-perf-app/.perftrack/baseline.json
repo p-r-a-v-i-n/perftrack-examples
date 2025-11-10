@@ -1,7 +1,7 @@
 {
   "project": "demo-perf-app",
   "commit": "local",
-  "timestamp": "2025-11-10T13:09:36.436852",
+  "timestamp": "2025-11-10T13:49:04.464881",
   "command": "python perf_scripts/bench_sum.py",
   "metrics": {
     "wall_time_ms": 200,
