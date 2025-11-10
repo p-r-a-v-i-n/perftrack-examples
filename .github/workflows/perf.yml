@@ -15,7 +15,7 @@ jobs:
 
       - name: Install perftrack
         run: |
-          pip install git+https://github.com/p-r-a-v-i-n/perftrack.git@main
+          pip install git+https://github.com/p-r-a-v-i-n/perftrack.git@master
 
       - name: Run benchmark
         working-directory: demo-perf-app
