@@ -15,12 +15,18 @@ jobs:
 
       - name: Install perftrack
         run: |
-          pip install git+https://github.com/p-r-a-v-i-n/perftrack.git
+          pip install git+https://github.com/p-r-a-v-i-n/perftrack.git@master
 
       - name: Run benchmark
         working-directory: demo-perf-app
         run: |
           perftrack run "python perf_scripts/bench_sum.py"
+
+      - name: Debug — show latest.json
+        working-directory: demo-perf-app
+        run: |
+          echo "=== LATEST RUN METRICS (.perftrack/latest.json) ==="
+          cat .perftrack/latest.json || echo "latest.json not found"
 
       - name: Set baseline if not exists
         working-directory: demo-perf-app
@@ -30,7 +36,14 @@ jobs:
             perftrack baseline set-latest || true
           fi
 
+      - name: Debug — show baseline.json
+        working-directory: demo-perf-app
+        run: |
+          echo "=== BASELINE (.perftrack/baseline.json) ==="
+          cat .perftrack/baseline.json || echo "baseline.json not found"
+
       - name: Compare vs baseline
         working-directory: demo-perf-app
         run: |
+          echo "=== RUNNING PERFTRACK COMPARISON ==="
           perftrack compare --fail-on-regression

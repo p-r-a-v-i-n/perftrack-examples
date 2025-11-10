@@ -1,19 +1,23 @@
 {
   "project": "demo-perf-app",
   "commit": "local",
-  "timestamp": "2025-11-10T13:09:36.436852",
+  "timestamp": "2025-11-10T14:38:29.206935",
   "command": "python perf_scripts/bench_sum.py",
   "metrics": {
-    "wall_time_ms": 200,
+    "wall_time_ms": 400,
     "cpu_time_ms": null,
-    "max_rss_mb": 0.0
+    "max_rss_mb": 1.55
   },
   "samples": [
     {
       "time_ms": 0,
       "rss_mb": 0.0
+    },
+    {
+      "time_ms": 200,
+      "rss_mb": 1.55
     }
   ],
-  "stdout": "",
-  "stderr": "Traceback (most recent call last):\n  File \"/home/pravin/OpenSource/perftrack-examples/demo-perf-app/perf_scripts/bench_sum.py\", line 1, in <module>\n    from app import sum_numbers\nModuleNotFoundError: No module named 'app'\n"
+  "stdout": "duration_seconds=0.24924208100128453\n",
+  "stderr": ""
 }
