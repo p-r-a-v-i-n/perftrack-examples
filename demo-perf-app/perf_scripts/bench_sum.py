@@ -1,5 +1,5 @@
-from app import sum_numbers
 import time
+from app.app import sum_numbers
 
 def run():
     start = time.perf_counter()
